@@ -1,0 +1,47 @@
+<div>
+    <button 
+    type="button"
+    (click)="afficherResume()"
+    class="btn btn-success button-resume">
+        Afficher résumé
+    </button>
+</div>
+
+<div class="container">
+  <div class="row" style="height: 100px;">
+    <div class="col-sm">
+      <app-stat *ngIf="showStat.moyenneButs" [statui]="moyenneButsModel" style="margin-left: 10px;"></app-stat>
+    </div>
+  </div>
+  <div class="row" style="height: 300px;">
+    <div class="col-sm">
+      <app-stat *ngIf="showStat.butsMatch"   [statui]="butsMatchModel" style="margin-left: 10px;"></app-stat>
+    </div>
+  </div>
+  <div class="row" style="height: 300px;">
+    <div class="col-sm">
+      <app-stat *ngIf="showStat.scoreFinal"   [statui]="scoreFinalModel" style="margin-left: 10px;"></app-stat>
+    </div>
+  </div>
+  <div class="row" style="height: 300px;">
+    <div class="col-sm">
+      <app-stat *ngIf="showStat.moyenneMatch"   [statui]="moyenneMatchModel" style="margin-left: 10px;"></app-stat>
+    </div>
+  </div>
+</div>
+
+<div id="baseline{{fixture.home.id}}{{fixture.away.id}}"></div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div id="barChart{{fixture.home.id}}" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+        <h5 class="card-title text-center">Bar Chart - Population</h5>
+      </div>
+      <div class="col-sm">
+        <div id="pieChart" style="width:100%; height:400px;"></div>
+        <h5 class="card-title text-center">Pie Chart - Browser market</h5>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,41 @@
+<mat-card class="main">
+  <mat-card-header class="stat-card-header">
+    <div class="stat-card-header-wrapper">
+      <div class="stat-card-header-title">
+        {{titre}}</div>
+        <div class="stat-card-header-options">
+          <mat-select [(value)]="optionsSelected" (selectionChange)="onChangeOptions()">
+            <mat-option *ngFor="let opt of options"  value="{{opt.value}}">
+              {{opt.libelle}}
+            </mat-option>
+          </mat-select>
+        </div>
+      </div>
+  </mat-card-header>
+    <mat-card-content class="card-content">
+      <div>
+        <mat-table [dataSource]="dataSource">
+          <ng-container matColumnDef="oneValue">
+            <mat-cell *matCellDef="let row">
+            <span class="mat-cell-span-left">{{row.oneValue}}</span>
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="group">
+            <mat-cell class="mat-cell-group" *matCellDef="let row">
+            <span class="">{{row.group}}</span>
+            </mat-cell>
+          </ng-container>
+          
+          
+          
+          <ng-container matColumnDef="twoValue">
+            <mat-cell class="mat-cell-right" *matCellDef="let row">
+              <span class="mat-cell-span-right">{{row.twoValue}}</span>
+            </mat-cell>
+          </ng-container>
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"> </mat-row>
+        </mat-table>
+      </div>
+    </mat-card-content>
+ </mat-card>

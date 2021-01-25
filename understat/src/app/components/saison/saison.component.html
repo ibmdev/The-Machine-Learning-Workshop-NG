@@ -1,0 +1,15 @@
+<div>
+    <button 
+    type="button"
+    (click)="afficherSaison()"
+    class="btn btn-success button-resume">
+        Afficher Saison
+    </button>
+</div>
+<div class="container">
+    <div class="row" style="height: 100px;">
+      <div class="col-sm">
+        <app-stat *ngIf="showStat.attackSpeed" [statui]="attackSpeedModel" style="margin-left: 10px;"></app-stat>
+      </div>
+    </div>
+  </div>

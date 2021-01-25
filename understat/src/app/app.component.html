@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-xs-12 col-12 col-md-3 form-group">
+    <ngx-select-dropdown
+      (change)="changeLeague($event)"
+      tabindex="0" 
+      [multiple]="false"
+      [config]="config"
+      [options]="leaguesName">
+     </ngx-select-dropdown>
+  </div>
+  <div class="col-xs-12 col-12 col-md-3 form-group">
+    <input type="text"
+    placeholder="Date de début"
+    class="form-control"
+    [(bsValue)]="dateStart"
+    [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"
+    [minDate]="minDate"
+    bsDatepicker>
+  </div>
+  <div class="col-xs-12 col-12 col-md-3 form-group">
+    <input type="text"
+    placeholder="Date de fin"
+    class="form-control"
+    [(bsValue)]="dateEnd" 
+    [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"
+    [minDate]="dateStart"
+    bsDatepicker>
+  </div>
+  <div class="col-xs-12 col-12 col-md-3 form-group">
+    <button type="button" (click)="filter()" class="btn btn-primary" [disabled]="false">Filtrer</button>
+  </div>
+</div>
+
+<accordion [isAnimated]="true">
+  <accordion-group *ngFor="let fixture of groupFixturesDisplay">
+    <button 
+    class="btn btn-link btn-block clearfix" 
+    accordion-heading
+    type="button">
+      <div class="pull-left float-left accordion-card-entete">
+        {{ fixture.date | date:'dd/MM/yyyy H:mm:ss' }} : {{fixture.home.Team}}({{fixture.home.id}}) - {{fixture.away.Team}}({{fixture.away.id}})
+      </div>
+    </button>
+    <div>
+      <tabset>
+        <tab 
+        heading="Résumé"
+        id="resume">
+        <app-resume [fixture]="fixture"></app-resume>
+      </tab>
+        <tab 
+        heading="Statistiques de la saison" 
+        id="stats">
+        <app-saison [fixture]="fixture"></app-saison>
+      </tab>
+        <tab heading="Forme" id="forme"></tab>
+        <tab heading="Composition" id="compos"></tab>
+        <tab heading="Cotes" id="cotes"></tab>
+        <tab heading="Bets" id="bets"></tab>
+      </tabset>
+    </div> 
+  </accordion-group>
+  
+</accordion>
+<router-outlet></router-outlet>
