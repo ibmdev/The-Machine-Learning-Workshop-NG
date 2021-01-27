@@ -7,9 +7,39 @@
     </button>
 </div>
 <div class="container">
-    <div class="row" style="height: 100px;">
+    <div class="row" style="height: 400px;">
       <div class="col-sm">
         <app-stat *ngIf="showStat.attackSpeed" [statui]="attackSpeedModel" style="margin-left: 10px;"></app-stat>
+      </div>
+    </div>
+    <div class="row" style="height: 450px;">
+      <div class="col-sm">
+        <app-stat *ngIf="showStat.gameStat" [statui]="gameStatModel" style="margin-left: 10px;"></app-stat>
+      </div>
+    </div>
+    <div class="row" style="height: 450px;">
+      <div class="col-sm">
+        <app-stat *ngIf="showStat.timingStat" [statui]="timingModel" style="margin-left: 10px;"></app-stat>
+      </div>
+    </div>
+    <div class="row" style="height: 450px;">
+      <div class="col-sm">
+        <app-stat *ngIf="showStat.situationStat" [statui]="situationModel" style="margin-left: 10px;"></app-stat>
+      </div>
+    </div>
+    <div class="row" style="height: 450px;">
+      <div class="col-sm">
+        <app-stat *ngIf="showStat.shotzoneStat" [statui]="shotZoneModel" style="margin-left: 10px;"></app-stat>
+      </div>
+    </div>
+    <div class="row" style="height: 450px;">
+      <div class="col-sm">
+        <app-stat *ngIf="showStat.resultStat" [statui]="resultModel" style="margin-left: 10px;"></app-stat>
+      </div>
+    </div>
+    <div class="row" style="height: 450px;">
+      <div class="col-sm">
+        <app-stat *ngIf="showStat.formationStat" [statui]="formationModel" style="margin-left: 10px;"></app-stat>
       </div>
     </div>
   </div>

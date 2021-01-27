@@ -10,5 +10,6 @@ export enum Libelles {
     TIMING_STAT = 'Statistiques / Temps de jeu',
     SITUATION_STAT = 'Statistiques / Situation de jeu',
     SHOTZONE_STAT = 'Statistiques / Zone de tir',
-    RESULT_STAT = 'Statistiques / Résultat du tir'
+    RESULT_STAT = 'Statistiques / Résultat du tir',
+    FORMATION_STAT = 'Statistiques / Formation'
 }

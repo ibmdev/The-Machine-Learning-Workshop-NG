@@ -18,7 +18,9 @@ export class SaisonComponent implements OnInit {
     situationModel: StatUiModel;
     shotZoneModel: StatUiModel;
     resultModel: StatUiModel;
-    showStat = {attackSpeed : false};
+    formationModel: StatUiModel;
+    // tslint:disable-next-line:max-line-length
+    showStat = {attackSpeed : false, gameStat: false, timingStat: false, situationStat: false, shotzoneStat: false, resultStat: false, formationStat: false};
     constructor(private statService: StatService,
                 private buildStatModelService: BuilderStatModelService) {}
     ngOnInit(): void {
@@ -40,6 +42,18 @@ export class SaisonComponent implements OnInit {
         console.log('away stats : ', awayStats);
         this.attackSpeedModel = this.buildStatModelService.buildAttackSpeedModel(homeStats[0], awayStats[0]);
         this.showStat.attackSpeed = true;
+        this.gameStatModel = this.buildStatModelService.buildGameStatModel(homeStats[0], awayStats[0]);
+        this.showStat.gameStat = true;
+        this.timingModel = this.buildStatModelService.buildTimingStatModel(homeStats[0], awayStats[0]);
+        this.showStat.timingStat = true;
+        this.situationModel = this.buildStatModelService.buildSituationStatModel(homeStats[0], awayStats[0]);
+        this.showStat.situationStat = true;
+        this.shotZoneModel = this.buildStatModelService.buildShotzoneStatModel(homeStats[0], awayStats[0]);
+        this.showStat.shotzoneStat = true;
+        this.resultModel = this.buildStatModelService.buildResultStatModel(homeStats[0], awayStats[0]);
+        this.showStat.resultStat = true;
+        this.formationModel = this.buildStatModelService.buildFormationStatModel(homeStats[0], awayStats[0]);
+        this.showStat.formationStat = true;
     }
 
 

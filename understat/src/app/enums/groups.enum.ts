@@ -18,4 +18,21 @@ export enum SCORE_FINAL {
     NUL = 'NUL',
     DEFAITE = 'DEFAITE'
  }
+export enum SEASON_GENERIC {
+     GOALS_FOR = 'BUT POUR',
+     SHOTS_FOR = 'TIRS POUR',
+     XG_FOR = 'XG POUR',
+     GOALS_AGAINST = 'BUT CONTRE',
+     SHOTS_AGAINST = 'TIRS CONTRE',
+     XG_AGAINST = 'XG CONTRE'
+ }
+export enum GAME_STAT {
+    GOALS_FOR = 'BUT POUR',
+    SHOTS_FOR = 'TIRS POUR',
+    XG_FOR = 'XG POUR',
+    GOALS_AGAINST = 'BUT CONTRE',
+    SHOTS_AGAINST = 'TIRS CONTRE',
+    XG_AGAINST = 'XG CONTRE',
+    TIME = 'DUREE'
+}
 
