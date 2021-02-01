@@ -31,7 +31,9 @@
     "ngx-select-dropdown": "1.4.4",
     "highcharts-angular": "2.9.0",
     "highcharts": "8.2.2",
-    "@material/data-table": "9.0.0"
+    "@material/data-table": "9.0.0",
+    "ngx-datatable-bootstrap4": "1.0.0",
+    "@swimlane/ngx-datatable": "19.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.1",

@@ -15,12 +15,15 @@ import { StatComponent } from './components/stats/stat.component';
 import {MatCardModule} from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { SaisonComponent } from './components/saison/saison.component';
+import { CompoComponent } from './components/compos/compo.component';
+import {DataTableModule} from 'ngx-datatable-bootstrap4';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
-    AppComponent, ResumeComponent, StatComponent, SaisonComponent
+    AppComponent, ResumeComponent, StatComponent, SaisonComponent, CompoComponent
   ],
-  exports: [ ResumeComponent, StatComponent, SaisonComponent ],
+  exports: [ ResumeComponent, StatComponent, SaisonComponent, CompoComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,7 +36,9 @@ import { SaisonComponent } from './components/saison/saison.component';
     SelectDropDownModule,
     ButtonsModule.forRoot(),
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    DataTableModule,
+    NgxDatatableModule
   ],
   providers: [],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],

@@ -1,0 +1,99 @@
+<div>
+    <button 
+    type="button"
+    (click)="afficherComposition()"
+    class="btn btn-success button-resume">
+        Afficher Composition
+    </button>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" *ngIf="isVisibleHome === true">
+      <data-table [items]="itemsHome"
+      [itemCount]="itemCountHome"
+      [showReloading]="true"
+      (reload)="reloadItemsHome($event)"
+      [pagination]="false"
+      [multiSelect]="true"
+      >
+<data-table-title title="{{hometeam}}"></data-table-title>
+<data-table-column [property]="'player_name'" [width]="150" [header]="'Player'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'games'" [header]="'M'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'goals'" [header]="'G'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'xG'" [header]="'xG'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'assists'" [header]="'A'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'xA'" [header]="'xA'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'shots'" [header]="'SH'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'yellow_cards'" [header]="'YC'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'red_cards'" [header]="'RC'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'time'" [header]="'T'" [sortable]="true">
+</data-table-column>
+<data-table-column
+      [width]="150">
+      <ng-template #headerTemplate let-item="item">
+        <i>Selection</i>
+      </ng-template>
+      <ng-template #cellTemplate let-item="item">
+        <button (click)="rowClickHome(item)" *ngIf="item.player_name !== 'Total' && (!item.selected || item.selected === false)" class="btn btn-success button-resume" style="margin-top: 10px; margin-bottom: 10px;">Sélectionner</button>
+        <button (click)="rowDeleteHome(item)" *ngIf="item.selected && item.selected === true" class="btn btn-danger button-resume" style="margin-top: 10px; margin-bottom: 10px;">Supprimer</button>
+      
+      </ng-template>
+    </data-table-column>
+</data-table>
+</div>
+</div>
+<div class="row">
+  <div class="col-sm-12" *ngIf="isVisibleAway === true">
+      <data-table [items]="itemsAway"
+      [itemCount]="itemCountAway"
+      [showReloading]="true"
+      (reload)="reloadItemsAway($event)"
+      [pagination]="false"
+      [multiSelect]="true"
+      >
+<data-table-title title="{{awayteam}}"></data-table-title>
+<data-table-column [property]="'player_name'" [width]="150" [header]="'Player'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'games'" [header]="'M'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'goals'" [header]="'G'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'xG'" [header]="'xG'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'assists'" [header]="'A'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'xA'" [header]="'xA'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'shots'" [header]="'SH'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'yellow_cards'" [header]="'YC'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'red_cards'" [header]="'RC'" [sortable]="true">
+</data-table-column>
+<data-table-column [property]="'time'" [header]="'T'" [sortable]="true">
+</data-table-column>
+<data-table-column
+      [width]="150">
+      <ng-template #headerTemplate let-item="item">
+        <i>Selection</i>
+      </ng-template>
+      <ng-template #cellTemplate let-item="item">
+        <button (click)="rowClickAway(item)" *ngIf="item.player_name !== 'Total' && (!item.selected || item.selected === false)" class="btn btn-success button-resume" style="margin-top: 10px; margin-bottom: 10px;">Sélectionner</button>
+        <button (click)="rowDeleteAway(item)" *ngIf="item.selected && item.selected === true" class="btn btn-danger button-resume" style="margin-top: 10px; margin-bottom: 10px;">Supprimer</button>
+      
+      </ng-template>
+    </data-table-column>
+</data-table>
+</div>
+</div>
+</div>

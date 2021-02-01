@@ -541,4 +541,9 @@ export class BuilderStatModelService {
         });
         return mapValueModel;
     }
+    /* Composition d'équipe  */
+    buildCompositionStatModel(homeStats: any, awayStats: any) {
+        console.log('Liste des joueurs Home : ', homeStats);
+        console.log('Liste des joueurs Away : ', awayStats);
+    }
 }
